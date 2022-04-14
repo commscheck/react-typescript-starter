@@ -1,7 +1,13 @@
+import PermissionCard from './components/permission-card/permission-card';
+
 const App = () => {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <PermissionCard label="Single option" />
+      <PermissionCard
+        label="Multiple options"
+        permissions={[{ label: 'Option one' }, { label: 'Optione two' }]}
+      />
     </div>
   );
 };
