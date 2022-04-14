@@ -1,14 +1,17 @@
-import PermissionCard from './components/permission-card/permission-card';
+import Layout from './components/layout/layout';
+import PermissionsList from './components/permissions-list/permissions-list';
+
+import theme from './styles/theme';
+import './styles/globals.css';
+import { ThemeProvider } from 'styled-components';
 
 const App = () => {
   return (
-    <div>
-      <PermissionCard label="Single option" />
-      <PermissionCard
-        label="Multiple options"
-        permissions={[{ label: 'Option one' }, { label: 'Optione two' }]}
-      />
-    </div>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <PermissionsList />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
