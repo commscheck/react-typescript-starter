@@ -1,24 +1,21 @@
 import styled from 'styled-components';
-import PermissionCard from '../permission-card/permission-card';
+
+import List from '../list/list';
+import PermissionCard from './permission-card/permission-card';
 
 export interface PermissionsListProps {}
 
-const Container = styled.div`
-  width: 480px;
-  margin: 16px;
+const Container = styled(List)`
+  background: ${(props) => props.theme.colors.background.primary};
 `;
 
 const PermissionsList = ({}: PermissionsListProps) => {
   return (
     <Container>
-      <PermissionCard label="Single option" />
-      <br />
+      <PermissionCard label="Manage sandbox users" />
       <PermissionCard
-        label="Multiple options"
-        permissions={[
-          { label: 'Option one', checked: true },
-          { label: 'Optione two' },
-        ]}
+        label="Development provisioning profiles"
+        permissions={[{ label: 'Create' }, { label: 'Delete' }]}
       />
     </Container>
   );

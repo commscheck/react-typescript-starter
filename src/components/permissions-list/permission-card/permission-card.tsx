@@ -1,7 +1,8 @@
 import { Fragment, useRef } from 'react';
+import styled from 'styled-components';
 import * as _ from 'lodash';
 
-import styled from 'styled-components';
+import ListItem from '../../list-item/list-item';
 
 export interface Permission {
   label: string;
@@ -12,11 +13,8 @@ export type PermissionCardProps =
   | Permission
   | { label: string; permissions: Permission[] };
 
-const Container = styled.div`
-  background: ${(p) => p.theme.colors.fill};
-  padding: 8px 16px;
-  border: 1px solid ${(p) => p.theme.colors.border};
-  border-radius: ${(p) => p.theme.borderRadius};
+const Container = styled(ListItem)`
+  background: ${(props) => props.theme.colors.fill.primary};
 
   display: grid;
   grid-template-columns: 1fr auto;
