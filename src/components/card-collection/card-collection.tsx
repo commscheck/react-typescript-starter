@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const List = styled.div`
+const CardCollection = styled.div`
   padding: 24px;
   height: 100%;
   columns: auto 480px;
@@ -12,4 +12,4 @@ const List = styled.div`
   }
 `;
 
-export default List;
+export default CardCollection;
