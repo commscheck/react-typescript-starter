@@ -1,23 +1,20 @@
-import styled from 'styled-components';
-
 import CardCollection from '../card-collection/card-collection';
 import ListCard from '../list-card/list-card';
 
+import styles from './permissions-section.module.css';
+
 export interface PermissionsSection {}
-
-const Container = styled(CardCollection)`
-  background: ${(props) => props.theme.colors.background.primary};
-`;
-
-const PermissionCard = styled(ListCard)`
-  background: ${(props) => props.theme.colors.fill.primary};
-`;
 
 const PermissionsSection = ({}: PermissionsSection) => {
   return (
-    <Container>
-      <PermissionCard heading="Manage sandbox users" checkbox="unchecked" />
-      <PermissionCard
+    <CardCollection className={styles.container}>
+      <ListCard
+        className={styles.card}
+        heading="Manage sandbox users"
+        checkbox="unchecked"
+      />
+      <ListCard
+        className={styles.card}
         heading="Provisioning profiles"
         children={[
           {
@@ -44,7 +41,7 @@ const PermissionsSection = ({}: PermissionsSection) => {
           },
         ]}
       />
-    </Container>
+    </CardCollection>
   );
 };
 

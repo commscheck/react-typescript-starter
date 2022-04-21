@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -17,7 +18,8 @@ module.exports = {
         test: /\.css/i,
         use: [
           isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-          'css-loader',
+          'css-modules-typescript-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
           'postcss-loader',
         ],
       },
@@ -30,5 +32,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
     }),
-  ],
+    new StylelintPlugin(),
+  ].concat(isProd ? [new MiniCssExtractPlugin()] : []),
 };

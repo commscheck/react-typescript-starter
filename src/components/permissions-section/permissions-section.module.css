@@ -1,0 +1,7 @@
+.container {
+  background: var(--grey-050);
+}
+
+.card {
+  background: white;
+}

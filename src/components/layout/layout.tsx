@@ -1,19 +1,13 @@
 import { ReactNode } from 'react';
-import styled from 'styled-components';
+
+import styles from './layout.module.css';
 
 export interface LayoutProps {
   children?: ReactNode;
 }
 
-const Container = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  background: ${(props) => props.theme.colors.background};
-`;
-
 const Layout = ({ children }: LayoutProps) => {
-  return <Container>{children}</Container>;
+  return <div className={styles.layout}>{children}</div>;
 };
 
 export default Layout;

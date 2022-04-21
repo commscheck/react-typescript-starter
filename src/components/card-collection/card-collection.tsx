@@ -1,15 +1,17 @@
-import styled from 'styled-components';
+import { ReactNode } from 'react';
+import classNames from 'classnames';
 
-const CardCollection = styled.div`
-  padding: 24px;
-  height: 100%;
-  columns: auto 480px;
-  column-gap: 24px;
+import styles from './card-collection.module.css';
 
-  & > * {
-    margin: 0 auto 24px;
-    break-inside: avoid-column;
-  }
-`;
+export interface CardCollectionProps {
+  className?: string;
+  children?: ReactNode;
+}
+
+const CardCollection = ({ className, children }: CardCollectionProps) => {
+  return (
+    <div className={classNames(styles.collection, className)}>{children}</div>
+  );
+};
 
 export default CardCollection;

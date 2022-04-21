@@ -1,29 +1,22 @@
-import styled from 'styled-components';
-
 import CardCollection from '../card-collection/card-collection';
 import ListCard from '../list-card/list-card';
 
+import styles from './results-section.module.css';
+
 export interface ResultsSectionProps {}
-
-const Container = styled(CardCollection)`
-  background: ${(props) => props.theme.colors.background.hero};
-`;
-
-const ResultsCard = styled(ListCard)`
-  background: ${(props) => props.theme.colors.fill.hero};
-`;
 
 const ResultsSection = ({}: ResultsSectionProps) => {
   return (
-    <Container>
-      <ResultsCard
+    <CardCollection className={styles.container}>
+      <ListCard
+        className={styles.card}
         heading="App Store Connect roles"
         children={[
           { label: 'Marketing' },
           { label: 'Access to Certificates, Identifiers & Profiles' },
         ]}
       />
-    </Container>
+    </CardCollection>
   );
 };
 

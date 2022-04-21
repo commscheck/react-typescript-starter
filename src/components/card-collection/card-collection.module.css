@@ -1,0 +1,14 @@
+.collection {
+  height: 100%;
+  padding: 24px;
+  columns: auto 480px;
+  column-gap: 24px;
+}
+
+.collection > * {
+  margin: 0 auto 24px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  max-width: 480px;
+  break-inside: avoid-column;
+}

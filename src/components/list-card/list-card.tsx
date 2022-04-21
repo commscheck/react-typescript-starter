@@ -1,8 +1,6 @@
 import { ReactNode, useRef } from 'react';
 import * as _ from 'lodash';
 
-import Card from '../card/card';
-
 export type CheckboxState = 'none' | 'unchecked' | 'checked';
 
 export interface ListItemProps {
@@ -16,6 +14,7 @@ export interface ListSectionProps {
 }
 
 export interface ListCardProps {
+  className?: string;
   heading: ReactNode;
   checkbox?: CheckboxState;
   style?: 'primary' | 'hero';
@@ -58,6 +57,7 @@ const ListSection = (props: ListSectionProps) => {
 };
 
 const ListCard = ({
+  className,
   heading,
   checkbox,
   style = 'primary',
@@ -67,7 +67,7 @@ const ListCard = ({
   const checkboxId = useRef(_.uniqueId('checkbox_'));
 
   return (
-    <Card>
+    <div className={className}>
       {checkbox ? (
         <label htmlFor={checkboxId.current}>
           <h4>{heading}</h4>
@@ -86,11 +86,11 @@ const ListCard = ({
                 </li>
               );
             }
-            return ListItem(c);
+            return <ListItem {...c} key={i} />;
           })}
         </ul>
       )}
-    </Card>
+    </div>
   );
 };
 
