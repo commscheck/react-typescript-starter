@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
-
-import PermissionsSection from '../components/permissions-section/permissions-section';
-import ResultsSection from '../components/results-section/results-section';
+import PermissionsList from '../components/permissions-list/permissions-list';
+import Results from '../components/results/results';
 
 import '../styles/main.css';
 
@@ -11,8 +10,8 @@ const App = () => {
   return (
     <StrictMode>
       <div className={styles.app}>
-        <PermissionsSection />
-        <ResultsSection />
+        <PermissionsList />
+        <Results />
       </div>
     </StrictMode>
   );

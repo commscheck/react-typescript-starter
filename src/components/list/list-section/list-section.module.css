@@ -1,0 +1,6 @@
+.section h5 {
+  size: 0.875rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--grey-500);
+}

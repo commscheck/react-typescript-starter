@@ -1,0 +1,7 @@
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-left: 16px;
+}
